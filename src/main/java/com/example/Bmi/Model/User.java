@@ -1,0 +1,56 @@
+package com.example.Bmi.Model;
+
+
+import com.example.Bmi.Repository.UserRepository;
+import jdk.nashorn.internal.ir.IfNode;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import java.util.Optional;
+
+@NoArgsConstructor
+@AllArgsConstructor
+@Data
+@Entity
+public class User {
+
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
+
+    private String name;
+    private Integer height;
+    private Integer weight;
+    private Integer age;
+    private String gender;
+
+
+    public Double bmiCalculator(Integer weight, Integer height) {
+
+
+        Double a = (double) weight / (height * height) * 10000;
+        Double b = Math.round(a * 100.0) / 100.0;
+        return b;
+
+    }
+
+    // Women BMR = 655.0955 + (9.5634 x weight in kg) + (1.8496 x height in cm) – (4.6756 x age in years)
+    public Double kcalCalculator(Integer weight, Integer height, Integer age, String gender) {
+
+        if (gender.equals("MEN")) {
+            Double a = 66.5 + (13.75 * weight) + (5.003 * height) - (6.775 * age);
+            return a;
+        } else {
+            Double b = 655 + (9.56 * weight) + (1.84 * height) - (4.67 * age);
+            return b;
+        }
+    }
+
+}
+

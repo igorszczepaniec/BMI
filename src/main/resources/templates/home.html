@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title></title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <!-- Custom fonts for this template -->
+    <link href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i"
+          rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="/one-page-wonder.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
+    <div class="container">
+        <a class="navbar-brand" href="#">Lorem Ipsum</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Log In</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/table" >Database</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<header class="masthead text-center text-white">
+    <div class="masthead-content">
+        <div class="container">
+            <h1 class="masthead-heading mb-0">BMI and KCAL intake calculator</h1>
+            <h2 class="masthead-subheading mb-0"></h2>
+            <a href="#h1" class="btn btn-primary btn-xl rounded-pill mt-5">Calculate your BMI</a>
+            <a href="#h2" class="btn btn-primary btn-xl rounded-pill mt-5">Calculate your REM</a>
+        </div>
+    </div>
+</header>
+<form action="/bmi" method="post" th:object="${user}" style="margin-bottom: 30px ">
+
+    <h1 style="margin-left: 20px" id="h1">BMI: </h1>
+
+    <div class="container row" style="margin-left: 20px">
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="gender" id="inlineRadio3"  th:value="MEN" required>
+            <label class="form-check-label" for="inlineRadio1">men</label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="gender" id="inlineRadio4" th:value="WOMEN" required>
+            <label class="form-check-label" for="inlineRadio2">women</label>
+        </div>
+    </div>
+
+    <div class="col">
+        <input th:field="${user.name}" type="text" class="form-control" placeholder="First name">
+    </div>
+    <div class="col">
+        <input th:field="${user.age}" type="text" class="form-control" placeholder="Age">
+    </div>
+    <div class="col">
+        <input th:field="${user.weight}" type="number" class="form-control" placeholder="weight">
+    </div>
+    <div class="col">
+        <input th:field="${user.height}" type="number" class="form-control" placeholder="height">
+    </div>
+    <button type="submit" class="btnXD btn btn-primary">Go</button>
+</form>
+
+<hr>
+
+<form action="/kcal" method="post" th:object="${user}" style="margin-bottom: 30px ">
+
+
+    <h1 style="margin-left: 20px" id="h2">Calories: </h1>
+
+    <div class="container row" style="margin-left: 20px">
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="gender" id="inlineRadio1" th:value="MEN" required>
+            <label class="form-check-label" for="inlineRadio1">men</label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="gender" id="inlineRadio2" th:value="WOMEN" required>
+            <label class="form-check-label" for="inlineRadio2">women</label>
+        </div>
+    </div>
+
+        <div class="col">
+            <input th:field="${user.name}" type="text" class="form-control" placeholder="First name">
+        </div>
+        <div class="col">
+            <input th:field="${user.age}" type="text" class="form-control" placeholder="Age">
+        </div>
+
+        <div class="col">
+            <input th:field="${user.weight}" type="number" class="form-control" placeholder="weight">
+        </div>
+        <div class="col">
+            <input th:field="${user.height}" type="number" class="form-control" placeholder="height">
+        </div>
+    </div>
+    <button type="submit" class="btnXD btn btn-primary">Go</button>
+</form>
+
+
+<!-- Footer -->
+<footer class="py-5 bg-black">
+    <div class="container">
+        <p class="m-0 text-center text-white small">Copyright &copy; Your Website 2019</p>
+    </div>
+    <!-- /.container -->
+</footer>
+
+<!-- Bootstrap core JavaScript -->
+<script src="vendor/jquery/jquery.min.js"></script>
+<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>
