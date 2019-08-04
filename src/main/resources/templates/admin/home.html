@@ -20,7 +20,7 @@
           rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="/one-page-wonder.css" rel="stylesheet">
+    <link href="/dd.css" rel="stylesheet">
 
 </head>
 
@@ -36,17 +36,31 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
+
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Log In</a>
+                    <a class="nav-link" href="/table">Database</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/table" >Database</a>
+                    <form th:action="@{/logout}" method="get" style="margin-left: 10px">
+                        <button class="btn btn-md btn-danger btn-block" name="registration"
+                                type="Submit">Logout
+                        </button>
+                    </form>
+                    </form>
                 </li>
+
             </ul>
         </div>
     </div>
 </nav>
 
+<!--
+ <form th:action="@{/logout}" method="get">
+        <button class="btn btn-md btn-danger btn-block" name="registration"
+                type="Submit">Logout
+        </button>
+    </form>
+-->
 <header class="masthead text-center text-white">
     <div class="masthead-content">
         <div class="container">
@@ -57,13 +71,13 @@
         </div>
     </div>
 </header>
-<form action="/bmi" method="post" th:object="${user}" style="margin-bottom: 30px ">
+<form action="/bmi" method="post" th:object="${userBMI}" style="margin-bottom: 30px ">
 
     <h1 style="margin-left: 20px" id="h1">BMI: </h1>
 
     <div class="container row" style="margin-left: 20px">
         <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" name="gender" id="inlineRadio3"  th:value="MEN" required>
+            <input class="form-check-input" type="radio" name="gender" id="inlineRadio3" th:value="MEN" required>
             <label class="form-check-label" for="inlineRadio1">men</label>
         </div>
         <div class="form-check form-check-inline">
@@ -73,23 +87,23 @@
     </div>
 
     <div class="col">
-        <input th:field="${user.name}" type="text" class="form-control" placeholder="First name">
+        <input th:field="${userBMI.name}" type="text" class="form-control" placeholder="First name">
     </div>
     <div class="col">
-        <input th:field="${user.age}" type="text" class="form-control" placeholder="Age">
+        <input th:field="${userBMI.age}" type="text" class="form-control" placeholder="Age">
     </div>
     <div class="col">
-        <input th:field="${user.weight}" type="number" class="form-control" placeholder="weight">
+        <input th:field="${userBMI.weight}" type="number" class="form-control" placeholder="weight">
     </div>
     <div class="col">
-        <input th:field="${user.height}" type="number" class="form-control" placeholder="height">
+        <input th:field="${userBMI.height}" type="number" class="form-control" placeholder="height">
     </div>
     <button type="submit" class="btnXD btn btn-primary">Go</button>
 </form>
 
 <hr>
 
-<form action="/kcal" method="post" th:object="${user}" style="margin-bottom: 30px ">
+<form action="/kcal" method="post" th:object="${userBMI}" style="margin-bottom: 30px ">
 
 
     <h1 style="margin-left: 20px" id="h2">Calories: </h1>
@@ -105,19 +119,19 @@
         </div>
     </div>
 
-        <div class="col">
-            <input th:field="${user.name}" type="text" class="form-control" placeholder="First name">
-        </div>
-        <div class="col">
-            <input th:field="${user.age}" type="text" class="form-control" placeholder="Age">
-        </div>
+    <div class="col">
+        <input th:field="${userBMI.name}" type="text" class="form-control" placeholder="First name">
+    </div>
+    <div class="col">
+        <input th:field="${userBMI.age}" type="text" class="form-control" placeholder="Age">
+    </div>
 
-        <div class="col">
-            <input th:field="${user.weight}" type="number" class="form-control" placeholder="weight">
-        </div>
-        <div class="col">
-            <input th:field="${user.height}" type="number" class="form-control" placeholder="height">
-        </div>
+    <div class="col">
+        <input th:field="${userBMI.weight}" type="number" class="form-control" placeholder="weight">
+    </div>
+    <div class="col">
+        <input th:field="${userBMI.height}" type="number" class="form-control" placeholder="height">
+    </div>
     </div>
     <button type="submit" class="btnXD btn btn-primary">Go</button>
 </form>

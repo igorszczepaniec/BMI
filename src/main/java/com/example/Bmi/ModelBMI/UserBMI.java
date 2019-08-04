@@ -1,23 +1,18 @@
-package com.example.Bmi.Model;
+package com.example.Bmi.ModelBMI;
 
 
-import com.example.Bmi.Repository.UserRepository;
-import jdk.nashorn.internal.ir.IfNode;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import java.util.Optional;
+import javax.persistence.*;
 
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
 @Entity
-public class User {
+@Table(name = "user_BMI")
+public class UserBMI {
 
 
     @Id

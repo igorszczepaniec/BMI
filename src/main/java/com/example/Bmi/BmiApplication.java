@@ -3,6 +3,8 @@ package com.example.Bmi;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+
+
 @SpringBootApplication
 public class BmiApplication {
 

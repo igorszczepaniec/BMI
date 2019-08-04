@@ -1,8 +1,8 @@
-package com.example.Bmi.Controller;
+package com.example.Bmi.ControllerBMI;
 
 
-import com.example.Bmi.Model.User;
-import com.example.Bmi.Repository.UserRepository;
+
+import com.example.Bmi.RepositoryBMI.UserRepositoryBMI;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -13,17 +13,17 @@ import org.springframework.web.bind.annotation.PathVariable;
 public class TableController {
 
     @Autowired
-    private UserRepository userRepository;
+    private UserRepositoryBMI userRepositoryBMI;
 
     @GetMapping("/table")
     private String all(ModelMap map) {
-        map.put("data", userRepository.findAll());
+        map.put("data", userRepositoryBMI.findAll());
         return "table";
     }
 
     @GetMapping("/table/{id}")
     public String show(@PathVariable Integer id, ModelMap map) {
-        map.put("user", userRepository.findById(id).get());
+        map.put("user", userRepositoryBMI.findById(id).get());
         return "show";
     }
 

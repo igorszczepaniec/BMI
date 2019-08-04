@@ -1,17 +1,112 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-    <
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>One Page Wonder - Start Bootstrap Template</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <!-- Custom fonts for this template -->
+    <link href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/one-page-wonder.css" rel="stylesheet">
+
 </head>
+
 <body>
 
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
+    <div class="container">
+        <a class="navbar-brand" href="#">Lorem Ipsum</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/login">Admin Mode</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#"></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
 
-<h1>your kcal intake is </h1>
+<header class="masthead text-center text-white">
+    <div class="masthead-content">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm">
+                </div>
+                <div class="col-sm1">
+                    <h1>Your calorie intake is: </h1>
+                    <h5 th:text="${kcal}"/>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm">
+                            </div>
+                            <div class="col-sm">
+                                <p>Aby przytyć dodaj 300 kcal</p>
+                                <p>Aby schudnąć odejmij 300 kcal</p>
+                            </div>
+                            <div class="col-sm">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm">
+                </div>
+            </div>
+        </div>
 
-<p th:text="${kcal}"/>
+        <form class="buttonBack" action="/">
+            <a href="/" class="btn btn-primary btn-xl rounded-pill mt-5">Take Me back !</a>
+        </form>
+
+    </div>
+
+</header>
 
 
+<main>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm ">
+                <h1>Pamietaj !</h1>
+                <p>Każdy organizm jest inny! Podane przez kalkulator kalorii wartości mają charakter orientacyjny i pomocniczy. Żadne narzędzie nie zastąpi konsultacji ze specjalistą! Zamieszczone informacje nie mogą być podstawą do przeprowadzenia samodiagnozy czy leczenia.</p>
+            </div>
+
+            <div class="col-sm">
+                <h1>Kalkulator kalorii</h1>
+                <p>Kalkulator kalorii umożliwia szybkie i wygodne wyliczenie własnego dziennego zapotrzebowania na kalorie oraz poznanie wskaźnika BMR. Wskaźnik podstawowej przemiany materii (Basal Metabolic Rate, BMR) jest minimalnym dziennym zapotrzebowaniem energetycznym koniecznym do podtrzymania podstawowych procesów życiowych ciała w spoczynku.</p>
+            </div>
+        </div>
+    </div>
+</main>
+
+
+<!-- Footer -->
+<footer class="py-5 bg-black">
+    <div class="container">
+        <p class="m-0 text-center text-white small">Copyright &copy; Your Website 2019</p>
+    </div>
+    <!-- /.container -->
+</footer>
+
+<!-- Bootstrap core JavaScript -->
+<script src="vendor/jquery/jquery.min.js"></script>
+<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
