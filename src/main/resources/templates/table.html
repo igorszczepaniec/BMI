@@ -33,6 +33,7 @@
             <td th:text="${userBMI.age}"></td>
             <td th:text="${userBMI.gender}"></td>
             <td><a th:href="'/table/'+${userBMI.id}">show</a></td>
+            <td><a th:href="'/table/'+${userBMI.id}+'/destroy'">destroyi</a></td>
         </tr>
         </tbody>
     </table>

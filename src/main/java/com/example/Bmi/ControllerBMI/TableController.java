@@ -27,5 +27,11 @@ public class TableController {
         return "show";
     }
 
+    @GetMapping("/table/{id}/destroy")
+    public String destroy(@PathVariable Integer id, ModelMap map){
+        userRepositoryBMI.deleteById(id);
+        return "redirect:/table";
+    }
+
 
 }
