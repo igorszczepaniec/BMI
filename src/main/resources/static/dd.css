@@ -49,6 +49,11 @@ h6 {
     color: black;
 }
 
+.btn-xl:hover{
+    background-color: black;
+    border-color: black;
+}
+
 .bg-black {
     background-color: black !important;
 }
